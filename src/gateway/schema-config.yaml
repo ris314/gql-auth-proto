@@ -1,0 +1,6 @@
+federation_version: 2
+subgraphs:
+  numbers:
+    routing_url: http://localhost:8080/graphql/
+    schema:
+      file: ../gql/schema.gql

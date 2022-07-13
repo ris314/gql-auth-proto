@@ -1,0 +1,34 @@
+type Number {
+  value: Int!
+  preferredLabel: String!
+}
+
+type OneDigitNumberCollection {
+  description: String
+  numbers: [Number]
+}
+
+type TwoDigitNumberCollection {
+  description: String
+  numbers: [Number]
+}
+
+type ThreeDigitNumberCollection {
+  description: String
+  numbers: [Number]
+}
+
+type NumberCollection {
+  oneDigit: OneDigitNumberCollection
+  twoDigit: TwoDigitNumberCollection
+  threeDigit: ThreeDigitNumberCollection
+}
+
+type Query {
+  oneDigitNumberCollection: OneDigitNumberCollection
+  twoDigitNumberCollection: TwoDigitNumberCollection
+  threeDigitNumberCollection: ThreeDigitNumberCollection
+  numberCollection: NumberCollection!
+  number(value: Int!): Number
+  fibonacciSequence: [Int]
+}

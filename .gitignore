@@ -1,0 +1,16 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# environment variables; these should be defined per environment
+**/.env
+
+# dependencies
+**/node_modules
+
+# distribution
+**/dist
+**/build
+
+npm-debug.log*
+
+
+**/config

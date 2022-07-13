@@ -1,0 +1,31 @@
+{
+  "name": "gql-auth-proto",
+  "version": "1.0.0",
+  "description": "Authorization model exploration for FaaS GraphQL resolvers.",
+  "scripts": {
+    "init:gateway": "rover supergraph compose --config src/gateway/schema-config.yaml > src/gateway/schema.gql",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "start": "concurrently \"npm run start:fibonacci\" \"npm run start:gql\" \"npm run start:gateway\"",
+    "start:fibonacci": "npx nodemon -e js src/distributed-services/fibonacci-sequence.js",
+    "start:gateway": "npx nodemon -e js,gql src/gateway/server.js",
+    "start:gql": "npx nodemon -e js,gql src/gql/server.js"
+  },
+  "author": "mdsol",
+  "license": "UNLICENSED",
+  "type": "module",
+  "dependencies": {
+    "@apollo/gateway": "^2.0.5",
+    "apollo-server-express": "^3.9.0",
+    "axios": "^0.27.2",
+    "chalk": "^5.0.1",
+    "concurrently": "^7.2.2",
+    "express": "^4.18.1",
+    "graphql": "^16.5.0",
+    "lodash": "^4.17.21"
+  },
+  "devDependencies": {
+    "eslint": "^8.18.0",
+    "nodemon": "^2.0.18"
+  }
+}
